@@ -1,0 +1,43 @@
+{
+  "name": "advent-of-code-2021",
+  "version": "1.0.0",
+  "description": "Advent of Code 2021 solutions",
+  "scripts": {
+    "day1": "node solutions/day1.js",
+    "day2": "node solutions/day2.js",
+    "day3": "node solutions/day3.js",
+    "day4": "node solutions/day4.js",
+    "day5": "node solutions/day5.js",
+    "day6": "node solutions/day6.js",
+    "day7": "node solutions/day7.js",
+    "day8": "node solutions/day8.js",
+    "day9": "node solutions/day9.js",
+    "day10": "node solutions/day10.js",
+    "day11": "node solutions/day11.js",
+    "day12": "node solutions/day12.js",
+    "day13": "node solutions/day13.js",
+    "day14": "node solutions/day14.js",
+    "day15": "node solutions/day15.js",
+    "day16": "node solutions/day16.js",
+    "day17": "node solutions/day17.js",
+    "day18": "node solutions/day18.js",
+    "day19": "node solutions/day19.js",
+    "day20": "node solutions/day20.js",
+    "day21": "node solutions/day21.js",
+    "day22": "node solutions/day22.js",
+    "day23": "node solutions/day23.js",
+    "day24": "node solutions/day24.js",
+    "day25": "node solutions/day25.js",
+    "all": "for %f in (solutions/*) do node solutions/%f"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaizoman666/advent-of-code-2021.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://github.com/kaizoman666/advent-of-code-2021#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
