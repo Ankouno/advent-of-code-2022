@@ -21,7 +21,7 @@ const firstSolution = () =>
 
 const secondSolution = () => 
   rounds.reduce((a, round) => {
-    switch (round[0] + round[1]) {
+    switch (round) {
       case 'A X': return a + 3 + 0;
       case 'B X': return a + 1 + 0;
       case 'C X': return a + 2 + 0;
