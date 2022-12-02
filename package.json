@@ -1,7 +1,7 @@
 {
-  "name": "advent-of-code-2021",
+  "name": "advent-of-code-2022",
   "version": "1.0.0",
-  "description": "Advent of Code 2021 solutions",
+  "description": "Advent of Code 2022 solutions",
   "scripts": {
     "day1": "node solutions/day1.js",
     "day2": "node solutions/day2.js",
@@ -32,11 +32,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kaizoman666/advent-of-code-2021.git"
+    "url": "git+https://github.com/kaizoman666/advent-of-code-2022.git"
   },
   "author": "",
   "license": "MIT",
-  "homepage": "https://github.com/kaizoman666/advent-of-code-2021#readme",
+  "homepage": "https://github.com/kaizoman666/advent-of-code-2022#readme",
   "dependencies": {
     "lodash": "^4.17.21"
   }
