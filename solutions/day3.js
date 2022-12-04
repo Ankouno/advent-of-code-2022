@@ -8,8 +8,8 @@ const letterToVal = (x) => x.charCodeAt(0) + (x == x.toLowerCase() ? 1 - 97 : 27
 // split each bag in half, find intersection of two halves, sum total value
 const firstSolution = () => {
   return sacks.map(x => intersection(
-    x.substring(0, x.length / 2).split(''), 
-    x.substring(x.length / 2).split('')
+    x.slice(0, x.length / 2).split(''), 
+    x.slice(x.length / 2).split('')
   )).reduce((a, x) =>
     a + x.reduce((b, y) => 
       b + letterToVal(y),
