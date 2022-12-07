@@ -2,27 +2,29 @@ const { isNumber, isObject } = require('lodash');
 const { loadInput, printSolution } = require('../shared/common');
 
 const log = loadInput('inputs/day7.txt').split('\n');
+
+/** Gets the current directory, based on a given path */
+const getDirFromPath = (p) => p.reduce((dir, sub) => dir[sub], system);
+
+// parse the input into a directory object structure
 const system = {};
-const path = [];
-
-const getCurrDir = () => path.reduce((dir, sub) => dir[sub], system);
-
+const currPath = [];
 log.forEach(line => {
   if (line.startsWith("$ cd")) {
     const relPath = line.substring(5);
     switch (relPath) {
-      case '/':  path.length = 0; break;
-      case '..': path.pop(); break;
-      default:   path.push(relPath); break;
+      case '/':  currPath.length = 0; break;
+      case '..': currPath.pop(); break;
+      default:   currPath.push(relPath); break;
     }
   } else if (!line.startsWith('$ ls')) {
     // file or directory
     if (line.startsWith('dir')) {
       const name = line.substring(4);
-      getCurrDir()[name] = {};
+      getDirFromPath(currPath)[name] = {};
     } else {
       const [size, name] = line.split(' ');
-      getCurrDir()[name] = parseInt(size);
+      getDirFromPath(currPath)[name] = parseInt(size);
     }
   }
 });
