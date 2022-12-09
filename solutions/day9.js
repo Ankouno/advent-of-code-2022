@@ -33,16 +33,16 @@ const countVisited = (ropeLength) => {
         var T = segments[j];
         var dx = H[0] - T[0];
         var dy = H[1] - T[1];
-        if (Math.abs(dx) > 1 || Math.abs(dy) > 1) {
-          // more than one tile away, shift the segment towards the previous
-          T[0] += clamp(dx, -1, 1);
-          T[1] += clamp(dy, -1, 1);
+        if (Math.abs(dx) <= 1 && Math.abs(dy) <= 1)
+          continue;
 
-          if (j == ropeLength - 1) {
-            var encoded = T[0] + "_" + T[1];
-            visited.set(encoded, true);
-          }
-        }
+        // more than one tile away, shift the segment towards the previous
+        T[0] += clamp(dx, -1, 1);
+        T[1] += clamp(dy, -1, 1);
+
+        // track the visited tiles by the final rope segment
+        if (j == ropeLength - 1)
+          visited.set(T[0] + "_" + T[1], true);
       }
     }
   });
