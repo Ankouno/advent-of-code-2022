@@ -52,7 +52,7 @@ const countVisited = (ropeLength) => {
 /** Count the visited tiles for the tail of a rope with only 2 segments. */
 const firstSolution = () => countVisited(2);
 
-/** Count the visited tiles for the tail of a rope with a 10 segments. */
+/** Count the visited tiles for the tail of a rope with 10 segments. */
 const secondSolution = () => countVisited(10);
 
 console.log("==[Day 9]=========")
