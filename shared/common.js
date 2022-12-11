@@ -12,12 +12,12 @@ const loadInput = (path) => fs.readFileSync(path).toString();
  * @param {number} num The number of the solution to print.
  * @param {Function} func The function to call to get the solution result.
  */
-const printSolution = (num, func) => {
+const printSolution = (num, func, padding = 10) => {
   var startTime, runTime, result;
   startTime = performance.now();
   result = func();
   runTime = (performance.now() - startTime).toFixed(2);
-  console.log(`${num}) ${String(result).padEnd(10)} [${runTime} ms]`);
+  console.log(`${num}) ${String(result).padEnd(padding)} [${runTime} ms]`);
 };
 
 module.exports = {
