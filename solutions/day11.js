@@ -1,3 +1,4 @@
+const { times } = require('lodash');
 const { loadInput, printSolution } = require('../shared/common');
 
 const initMonkeys = loadInput('inputs/day11.txt').split('\n\n').map(m => {
@@ -14,18 +15,18 @@ const initMonkeys = loadInput('inputs/day11.txt').split('\n\n').map(m => {
 const gcd = (a, b) => !b ? a : gcd(b, a % b);
 const lcm = (a, b) => (a * b) / gcd(a, b);
 const lcmArray = (array) => array.reduce((a, b) => lcm(a, b), 1);
-const worryModulator = lcmArray(initMonkeys.map(m => m[2]));
+const worryModulo = lcmArray(initMonkeys.map(m => m[2]));
 
 /**
  * Execute the specified number of rounds on the monkeys.
  * @param {array} monkeys
  * @param {number} roundCount
- * @param {boolean} modulateWorry Flag for how to reduce worry levels after each inspection.
+ * @param {boolean} isPart2 Flag for how to reduce worry levels after each inspection.
  *   - False: worry levels will be reduced by 1/3rd.
  *   - True:  worry levels will be modulated by the LCM of the monkey divisibility tests.
  * @returns The inspection counts for the two monkeys with the highest counts, multiplied together.
  */
-const executeRounds = (monkeys, roundCount, modulateWorry) => {
+const executeRounds = (monkeys, roundCount, isPart2) => {
   for (var round = 0; round < roundCount; round++) {
     monkeys.forEach(monkey => {
       let [items, [opArg1, op, opArg2], divTest, ifTrue, ifFalse] = monkey;
@@ -38,10 +39,10 @@ const executeRounds = (monkeys, roundCount, modulateWorry) => {
         var arg1 = (opArg1 == 'old' ? worryLevel : parseInt(opArg1));
         var arg2 = (opArg2 == 'old' ? worryLevel : parseInt(opArg2));
         worryLevel = eval(arg1 + op + arg2);
-        if (!modulateWorry) {
+        if (!isPart2) {
           worryLevel = Math.floor(worryLevel / 3);
         } else {
-          worryLevel %= worryModulator;
+          worryLevel %= worryModulo;
         }
 
         // throw to new monkey
