@@ -59,9 +59,8 @@ const spawnSand = (map) => {
     return false;
   }
 
-  let width = map[0].length - 1;
   let height = map.length - 1;
-  while (x > 0 && x < width && y < height) {
+  while (y < height) {
     if (map[y + 1][x] == CHAR_EMPTY) {
       y++;
     } else {
