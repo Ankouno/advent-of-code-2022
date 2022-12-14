@@ -1,8 +1,8 @@
 const { loadInput, printSolution } = require('../shared/common');
 
-const CHAR_EMPTY = '.'
+const CHAR_EMPTY = '.';
 const CHAR_BLOCK = '█';
-const CHAR_SAND = 'o'
+const CHAR_SAND = 'o';
 
 const paths = loadInput('inputs/day14.txt').split('\n')
   .map(path => path.split(' -> ')
@@ -40,6 +40,7 @@ paths.forEach(path => {
   }
 });
 
+/** Prints a map to the console for debugging. */
 const printMap = (map) => {
   for (let y = 0; y < map.length; y++) {
     console.log(map[y].join(''));
@@ -53,7 +54,7 @@ const printMap = (map) => {
  */
 const spawnSand = (map) => {
   let x = 500, y = 0;
-  if (map[y][x] != '.') {
+  if (map[y][x] != CHAR_EMPTY) {
     // hole is plugged, can't spawn
     return false;
   }
