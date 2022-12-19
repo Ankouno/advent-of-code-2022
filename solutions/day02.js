@@ -1,6 +1,6 @@
 const { loadInput, printSolution } = require('../shared/common');
 
-const rounds = loadInput('inputs/day2.txt').split('\n');
+const rounds = loadInput('inputs/day02.txt').split('\n');
 
 const firstSolution = () =>
   rounds.reduce((a, round) => {

@@ -1,7 +1,7 @@
 const { loadInput, printSolution } = require('../shared/common');
 const { intersection } = require('lodash');
 
-const sacks = loadInput('inputs/day3.txt').split('\n');
+const sacks = loadInput('inputs/day03.txt').split('\n');
 
 const letterToVal = (x) => x.charCodeAt(0) + (x == x.toLowerCase() ? 1 - 97 : 27 - 65);
 

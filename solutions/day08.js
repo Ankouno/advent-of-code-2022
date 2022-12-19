@@ -1,6 +1,6 @@
 const { loadInput, printSolution } = require('../shared/common');
 
-const map = loadInput('inputs/day8.txt').split('\n').map(r => r.split('').map(Number));
+const map = loadInput('inputs/day08.txt').split('\n').map(r => r.split('').map(Number));
 const mapH = map.length;
 const mapW = map[0].length;
 

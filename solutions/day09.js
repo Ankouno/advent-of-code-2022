@@ -3,7 +3,7 @@ const { loadInput, printSolution } = require('../shared/common');
 /** Clamp a value between a maximum and minimum. */
 const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
 
-const commands = loadInput('inputs/day9.txt').split('\n').map(l => l.split(' '));
+const commands = loadInput('inputs/day09.txt').split('\n').map(l => l.split(' '));
 
 /** Count the visited tiles for the tail piece of a rope. */
 const countVisited = (ropeLength) => {

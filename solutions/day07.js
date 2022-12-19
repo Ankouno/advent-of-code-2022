@@ -1,7 +1,7 @@
 const { isNumber, isObject } = require('lodash');
 const { loadInput, printSolution } = require('../shared/common');
 
-const log = loadInput('inputs/day7.txt').split('\n');
+const log = loadInput('inputs/day07.txt').split('\n');
 
 /** Gets the current directory, based on a given path */
 const getDirFromPath = (p) => p.reduce((dir, sub) => dir[sub], system);

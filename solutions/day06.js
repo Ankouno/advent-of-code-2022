@@ -1,6 +1,6 @@
 const { loadInput, printSolution } = require('../shared/common');
 
-const input = loadInput('inputs/day6.txt');
+const input = loadInput('inputs/day06.txt');
 
 const findMarker = (size) => {
   for (let i = 0; true; i++) {

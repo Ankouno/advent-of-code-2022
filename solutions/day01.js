@@ -1,6 +1,6 @@
 const { loadInput, printSolution } = require('../shared/common');
 
-const elves = loadInput('inputs/day1.txt')
+const elves = loadInput('inputs/day01.txt')
   .split('\n\n').map(elf => elf.split('\n').map(Number))
   
 const sums = elves

@@ -1,6 +1,6 @@
 const { loadInput, printSolution } = require('../shared/common');
 
-const pairs = loadInput('inputs/day4.txt')
+const pairs = loadInput('inputs/day04.txt')
   .split('\n')
   .map(p => p
     .split(',')

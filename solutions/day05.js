@@ -1,6 +1,6 @@
 const { loadInput, printSolution } = require('../shared/common');
 
-const input = loadInput('inputs/day5.txt').split('\n\n');
+const input = loadInput('inputs/day05.txt').split('\n\n');
 const commands = input[1].split('\n').map(c => c.match(/\d+/g).map(Number));
 
 const crates = input[0]
