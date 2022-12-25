@@ -1,5 +1,5 @@
 const { loadInput, printSolution } = require('../shared/common');
-const mod = (n, m) => ((n % m) + m) % m;
+const { mod } = require('../shared/math');
 
 // Solution is hardcoded for my input, so may not work for every input.
 

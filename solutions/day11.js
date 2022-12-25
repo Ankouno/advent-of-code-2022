@@ -1,5 +1,5 @@
-const { times } = require('lodash');
 const { loadInput, printSolution } = require('../shared/common');
+const { lcmList } = require('../shared/math');
 
 const initMonkeys = loadInput('inputs/day11.txt').split('\n\n').map(m => {
   var monkey = /.*[^\d]+([^\n]+)[^=]+= ([^\n]+)[^\d]+(\d+)[^\d]+(\d+)[^\d]+(\d+)/.exec(m).slice(1);
@@ -12,10 +12,7 @@ const initMonkeys = loadInput('inputs/day11.txt').split('\n\n').map(m => {
   return monkey;
 });
 
-const gcd = (a, b) => !b ? a : gcd(b, a % b);
-const lcm = (a, b) => (a * b) / gcd(a, b);
-const lcmArray = (array) => array.reduce((a, b) => lcm(a, b), 1);
-const worryModulo = lcmArray(initMonkeys.map(m => m[2]));
+const worryModulo = lcmList(initMonkeys.map(m => m[2]));
 
 /**
  * Execute the specified number of rounds on the monkeys.
