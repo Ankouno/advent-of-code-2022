@@ -6,14 +6,12 @@ const numbers = loadInput('inputs/day25.txt').split('\n')
   
 /** Get the sum of all the input numbers, then convert that back to a SNAFU number */
 const firstSolution = () => {
-  let total = numbers.reduce((a, n) => a + n, 0);
+  let sum = numbers.reduce((a, n) => a + n, 0);
   let digits = [];
-  while (total != 0) {
-    let digit = total % 5;
-    if (digit == 3) { digit = '='; total += 2; }
-    if (digit == 4) { digit = '-'; total += 1; }
-    digits.unshift(digit);
-    total = Math.floor(total / 5);
+  while (sum != 0) {
+    sum += 2;
+    digits.unshift("=-012"[sum % 5]);
+    sum = Math.floor(sum / 5);
   }
   return digits.join('');
 };
